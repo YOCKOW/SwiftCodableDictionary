@@ -12,6 +12,14 @@ public protocol CodableDictionaryKey: Hashable, CodingKey {}
 // Note: `extension CodableDictionaryKey where Self: LosslessStringConvertible` will cause ambiguity errors.
 
 extension CodableDictionaryKey where Self: FixedWidthInteger {
+  public var description: String {
+    // Workaround for https://github.com/YOCKOW/SwiftCodableDictionary/issues/2
+    func __description<B>(_ int: B) -> String where B: BinaryInteger {
+      return int.description
+    }
+    return __description(self)
+  }
+
   public var stringValue: String {
     return String(self, radix: 10)
   }

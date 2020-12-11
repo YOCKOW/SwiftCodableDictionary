@@ -71,4 +71,10 @@ final class CodableDictionaryKeyTests: XCTestCase {
     XCTAssertEqual(key?.stringValue, "my key")
     XCTAssertEqual(key?.intValue, nil)
   }
+
+  func test_issue2() {
+    // https://github.com/YOCKOW/SwiftCodableDictionary/issues/2
+    XCTAssertEqual(String(Int(0)), "0")
+    XCTAssertEqual(Int(0).description, "0")
+  }
 }
