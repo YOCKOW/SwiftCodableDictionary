@@ -8,6 +8,7 @@ extension CodableDictionaryKeyTests {
     static let __allTests__CodableDictionaryKeyTests = [
         ("test_enumKey", test_enumKey),
         ("test_integerKey", test_integerKey),
+        ("test_issue2", test_issue2),
         ("test_originalRawRepresentableKey", test_originalRawRepresentableKey),
     ]
 }
