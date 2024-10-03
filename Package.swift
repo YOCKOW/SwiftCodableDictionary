@@ -18,5 +18,6 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(name: "CodableDictionary", dependencies: []),
         .testTarget(name: "CodableDictionaryTests", dependencies: ["CodableDictionary"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v4, .v4_2, .v5, .version("6")]
 )

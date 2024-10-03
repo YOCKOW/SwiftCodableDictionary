@@ -42,7 +42,7 @@ print(dictionary == decoded) // -> true
 
 # Requirements
 
-- Swift 5
+- Swift 6, 5
 - OS
   * macOS
   * Linux
