@@ -79,6 +79,29 @@ extension CodableDictionaryKey where Self: RawRepresentable, Self.RawValue == In
   }
 }
 
+#if compiler(>=6)
+extension String: @retroactive CodingKey {}
+extension Substring: @retroactive CodingKey {}
+extension Unicode.Scalar: @retroactive CodingKey {}
+extension Character: @retroactive CodingKey {}
+extension Int: @retroactive CodingKey {}
+extension Int8: @retroactive CodingKey {}
+extension Int16: @retroactive CodingKey {}
+extension Int32: @retroactive CodingKey {}
+extension Int64: @retroactive CodingKey {}
+extension UInt8: @retroactive CodingKey {}
+extension UInt16: @retroactive CodingKey {}
+extension UInt32: @retroactive CodingKey {}
+extension UInt64: @retroactive CodingKey {}
+extension UInt: @retroactive CodingKey {}
+extension Float: @retroactive CodingKey {}
+extension Double: @retroactive CodingKey {}
+#if arch(i386) || arch(x86_64)
+extension Float80: @retroactive CodingKey {}
+#endif
+extension Bool: @retroactive CodingKey {}
+#endif
+
 
 extension String: CodableDictionaryKey {
   public var stringValue: String {
